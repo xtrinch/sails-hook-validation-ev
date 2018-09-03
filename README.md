@@ -5,7 +5,7 @@
 
 ## About
 
-Sails hook for validating requests with the help of [express-validator](). Because - why reinvent the wheel? Uses the same configuration functions as `express-validator`.
+Sails hook for validating REST requests with the help of [express-validator](). Because - why reinvent the wheel? Uses the same configuration functions as `express-validator`.
 
 ## Installation
 
