@@ -5,7 +5,7 @@
 
 ## About
 
-Sails 1.x hook for validating blueprint/custom REST requests with the help of [express-validator](). Because - why reinvent the wheel? Uses the same configuration functions as `express-validator`.
+Sails 1.x hook for validating REST requests with the help of [express-validator](https://github.com/express-validator/express-validator). Because - why reinvent the wheel? Uses the same configuration functions as `express-validator`. Supports validators, sanitizers, localization, ...
 
 ## Installation
 
