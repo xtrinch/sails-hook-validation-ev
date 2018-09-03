@@ -15,7 +15,9 @@ As simple as `npm install --save sails-hook-validation-ev`.
 
 For models with blueprint routes you wish to validate, you need only add a `validate` function to it.
 
-### Example model `Todo.js`
+### Example model
+
+`Todo.js:`
 
     module.exports = {
 
@@ -66,6 +68,8 @@ The following snippet will override default /POST blueprint handler with custom 
 
 #### Option 1: Validate via validate function in model
 
+`TodoController.js:`
+
       var validate = require('sails-hook-validation-ev/lib/validate')
 
       module.exports = {
@@ -81,6 +85,8 @@ The following snippet will override default /POST blueprint handler with custom 
 
 
 #### Option 2: Provide a custom validate function
+
+`TodoController.js:`
 
       var validate = require('sails-hook-validation-ev/lib/validate')
 
