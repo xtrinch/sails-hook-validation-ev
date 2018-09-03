@@ -41,7 +41,7 @@ For models with blueprint routes you wish to validate, you need only add a `vali
 
 For info on which functions you can use, see [express-validator check API](https://express-validator.github.io/docs/check-api.html). It opens a world of possibilities :)
 
-### Example response
+### Example `POST /todo` response
 
     {
         "errors": [
@@ -66,37 +66,37 @@ The following snippet will override default /POST blueprint handler with custom 
 
 #### Option 1: Validate via validate function in model
 
-  var validate = require('sails-hook-validation-ev/lib/validate')
+      var validate = require('sails-hook-validation-ev/lib/validate')
 
-  module.exports = {
-    create: async function(req, res) {
-      validate(req)
-      const errors = await req.getValidationResult();
-      if (!errors.isEmpty()) {
-          return res.status(400).json({ errors: errors.array() });
-      }
-      return res.ok()
-    }  
-  };
+      module.exports = {
+        create: async function(req, res) {
+          validate(req)
+          const errors = await req.getValidationResult();
+          if (!errors.isEmpty()) {
+              return res.status(400).json({ errors: errors.array() });
+          }
+          return res.ok()
+        }  
+      };
 
 
 #### Option 2: Provide a custom validate function
 
-  var validate = require('sails-hook-validation-ev/lib/validate')
+      var validate = require('sails-hook-validation-ev/lib/validate')
 
-  module.exports = {
-    create: async function(req, res) {
-      validate(req, (req) => {
-        req.check('title')
-          .exists()
-          .isLength({ min: 1 }).withMessage('must be at least 5 chars long');
-        req.check('description').exists();
-      })
+      module.exports = {
+        create: async function(req, res) {
+          validate(req, (req) => {
+            req.check('title')
+              .exists()
+              .isLength({ min: 1 }).withMessage('must be at least 5 chars long');
+            req.check('description').exists();
+          })
 
-      const errors = await req.getValidationResult();
-      if (!errors.isEmpty()) {
-          return res.status(400).json({ errors: errors.array() });
-      }
-      return res.ok()
-    }  
-  };
+          const errors = await req.getValidationResult();
+          if (!errors.isEmpty()) {
+              return res.status(400).json({ errors: errors.array() });
+          }
+          return res.ok()
+        }  
+      };
