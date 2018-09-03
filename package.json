@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-validation-ev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Validate Sails 1.x requests with the help of express-validate",
   "main": "index.js",
   "scripts": {
