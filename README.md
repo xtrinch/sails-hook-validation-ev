@@ -11,7 +11,9 @@ Sails hook for validating requests with the help of [express-validator](). Becau
 
 As simple as `npm install --save sails-hook-validation-ev`.
 
-## Example
+## Usage
+
+For models you wish to validate, you need only add a `validate` function to it.
 
 ### Example model `Todo.js`
 
