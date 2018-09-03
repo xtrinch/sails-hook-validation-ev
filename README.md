@@ -1,5 +1,5 @@
-[![npm version](https://badge.fury.io/js/sails-pagination-middleware.svg)](https://badge.fury.io/js/sails-pagination-middleware)
-[![npm](https://img.shields.io/npm/dt/sails-pagination-middleware.svg)]()
+[![npm version](https://badge.fury.io/js/sails-hook-validation-ev.svg)](https://badge.fury.io/js/sails-hook-validation-ev)
+[![npm](https://img.shields.io/npm/dt/sails-hook-validation-ev.svg)]()
 
 # sails-hook-validation-ev
 
