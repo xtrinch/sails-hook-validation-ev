@@ -5,7 +5,7 @@
 var _ = require('@sailshq/lodash');
 var async = require('async');
 var sailsUpdateRecord = require('sails/lib/hooks/blueprints/actions/update');
-const { validationResult } = require('express-validator/check');
+var validate = require('../lib/validate');
 
 /**
  * Update One Record
@@ -18,16 +18,7 @@ const { validationResult } = require('express-validator/check');
  */
 
 module.exports = function updateOneRecord (req, res) {
-  let action = 'update';
-  var queryOptions = req._sails.hooks.blueprints.parseBlueprintOptions(req);
-  let Model = req._sails.models[queryOptions.using];
-  const expressValidator = require('express-validator');
-  expressValidator()(req, {}, () => {});
-
-  try {
-    Model.validate(req)
-  } catch(e) { }
-
+  validate(req)
   req.getValidationResult().then(function(errors) {
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
